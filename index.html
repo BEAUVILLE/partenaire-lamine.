@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#061b13">
+  <title>Lamine — Chauffeur privé à Saly | DIGIY DRIVER</title>
+  <meta name="description" content="Lamine, chauffeur privé à Saly : transferts AIBD, courses locales, trajets vers Dakar, circuits Petite Côte et mise à disposition. Contact WhatsApp direct.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://partenaire-lamine.digiylyfe.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://partenaire-lamine.digiylyfe.com/">
+  <meta property="og:title" content="Lamine — Chauffeur privé à Saly">
+  <meta property="og:description" content="Transfert AIBD, courses locales, circuits Petite Côte et contact WhatsApp direct.">
+  <meta property="og:image" content="https://digiylyfe.com/icon-512.png?v=20260713">
+
+  <style>
+    :root{
+      --bg:#03120d;
+      --panel:#08251a;
+      --panel-2:#0c3324;
+      --ink:#fffaf0;
+      --soft:rgba(255,250,240,.78);
+      --gold:#f6c453;
+      --gold-light:#fff1bd;
+      --green:#22c55e;
+      --blue:#3b82f6;
+      --line:rgba(255,255,255,.14);
+      --shadow:0 24px 70px rgba(0,0,0,.34);
+      --radius:28px;
+      --font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100svh;
+      color:var(--ink);
+      font-family:var(--font);
+      background:
+        radial-gradient(900px 480px at 10% -10%,rgba(59,130,246,.28),transparent 62%),
+        radial-gradient(760px 420px at 95% 0,rgba(246,196,83,.18),transparent 58%),
+        linear-gradient(180deg,#075b35 0,#06291d 38%,var(--bg) 100%);
+    }
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    .app{width:min(100%,920px);margin:auto;padding:14px 12px 34px}
+    .top{
+      display:grid;
+      grid-template-columns:58px 1fr auto;
+      align-items:center;
+      gap:12px;
+    }
+    .logo{
+      width:58px;height:58px;border-radius:20px;
+      display:grid;place-items:center;
+      border:1px solid rgba(246,196,83,.55);
+      background:linear-gradient(145deg,var(--blue),#0b5ca9);
+      box-shadow:0 14px 34px rgba(0,0,0,.26);
+      color:white;font-weight:1000;font-size:25px;
+    }
+    .brand strong{
+      display:block;font-size:clamp(20px,5vw,31px);
+      line-height:1;font-weight:1000;letter-spacing:.02em;
+    }
+    .brand small{
+      display:block;margin-top:5px;color:var(--soft);
+      font-size:11px;font-weight:950;letter-spacing:.08em;text-transform:uppercase;
+    }
+    .back{
+      min-height:46px;padding:0 14px;border-radius:999px;
+      display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid rgba(246,196,83,.44);
+      background:rgba(255,255,255,.08);
+      color:#fff3cf;font-size:12px;font-weight:1000;
+    }
+    .hero{
+      margin-top:15px;
+      border:1px solid rgba(246,196,83,.50);
+      border-radius:34px;
+      padding:23px 18px 20px;
+      background:
+        radial-gradient(560px 250px at 100% 0,rgba(59,130,246,.22),transparent 65%),
+        linear-gradient(155deg,rgba(255,255,255,.10),rgba(255,255,255,.045));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid rgba(59,130,246,.55);
+      background:rgba(59,130,246,.14);
+      color:#dceaff;font-size:11px;font-weight:1000;
+      letter-spacing:.08em;text-transform:uppercase;
+    }
+    h1{
+      margin:14px 0 8px;
+      font-size:clamp(36px,10vw,72px);
+      line-height:.92;letter-spacing:-.055em;font-weight:1000;
+    }
+    .role{
+      margin:0;color:#fff3cf;
+      font-size:clamp(18px,4.8vw,28px);
+      line-height:1.1;font-weight:1000;
+    }
+    .lead{
+      margin:13px 0 0;
+      color:var(--soft);
+      font-size:clamp(14px,3.7vw,18px);
+      line-height:1.5;font-weight:850;
+      max-width:760px;
+    }
+    .trust{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:15px;
+    }
+    .trust span{
+      padding:8px 11px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.065);
+      color:#eef7f2;font-size:12px;font-weight:950;
+    }
+    .main-actions{
+      display:grid;grid-template-columns:1.3fr 1fr;gap:10px;margin-top:18px;
+    }
+    .btn{
+      min-height:54px;padding:10px 16px;border-radius:999px;
+      display:flex;align-items:center;justify-content:center;text-align:center;
+      font-size:14px;font-weight:1000;border:1px solid rgba(246,196,83,.52);
+    }
+    .btn-primary{
+      color:#06140f;
+      background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--green));
+      border-color:rgba(246,196,83,.82);
+    }
+    .btn-secondary{background:rgba(255,255,255,.08);color:#fff3cf}
+    .section{
+      margin-top:16px;
+      border:1px solid rgba(246,196,83,.28);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.06);
+      padding:17px;
+    }
+    .section h2{
+      margin:0 0 7px;
+      font-size:clamp(23px,6vw,36px);
+      line-height:1;font-weight:1000;letter-spacing:-.035em;
+    }
+    .section>p{
+      margin:0;color:var(--soft);font-size:14px;line-height:1.45;font-weight:850;
+    }
+    .service-grid{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:13px;
+    }
+    .service{
+      min-height:142px;
+      padding:15px;border-radius:22px;
+      border:1px solid rgba(59,130,246,.34);
+      background:linear-gradient(150deg,rgba(59,130,246,.15),rgba(255,255,255,.04));
+      box-shadow:0 12px 28px rgba(0,0,0,.18);
+    }
+    .service i{font-style:normal;font-size:29px;line-height:1}
+    .service strong{display:block;margin-top:10px;font-size:16px;font-weight:1000}
+    .service span{display:block;margin-top:6px;color:var(--soft);font-size:12.5px;line-height:1.4;font-weight:850}
+    .zones{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}
+    .zones span{
+      padding:8px 11px;border-radius:999px;
+      border:1px solid rgba(34,197,94,.35);
+      background:rgba(34,197,94,.11);
+      color:#eafff3;font-size:12px;font-weight:950;
+    }
+    .booking{
+      background:
+        radial-gradient(520px 220px at 0 0,rgba(246,196,83,.18),transparent 64%),
+        linear-gradient(150deg,rgba(8,52,35,.96),rgba(4,20,14,.96));
+      border-color:rgba(246,196,83,.48);
+    }
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+    .full{grid-column:1/-1}
+    label{display:block;margin:0 0 6px;color:#fff3cf;font-size:12px;font-weight:1000}
+    input,select,textarea{
+      width:100%;border-radius:15px;border:1px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.075);color:var(--ink);
+      padding:12px 13px;outline:none;
+    }
+    input,select{min-height:48px}
+    textarea{min-height:92px;resize:vertical}
+    input:focus,select:focus,textarea:focus{
+      border-color:var(--gold);
+      box-shadow:0 0 0 4px rgba(246,196,83,.12);
+    }
+    option{color:#111}
+    .send{
+      width:100%;min-height:54px;margin-top:12px;border:0;border-radius:999px;
+      background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--green));
+      color:#06140f;font-weight:1000;cursor:pointer;
+    }
+    .notice{
+      margin:11px 0 0;padding:11px 12px;border-radius:17px;
+      border:1px dashed rgba(246,196,83,.38);
+      background:rgba(246,196,83,.07);
+      color:rgba(255,250,240,.80);font-size:12px;line-height:1.42;font-weight:900;
+    }
+    .direct{
+      text-align:center;
+      border-color:rgba(34,197,94,.42);
+      background:linear-gradient(150deg,rgba(34,197,94,.14),rgba(255,255,255,.045));
+    }
+    .direct strong{
+      display:block;color:#fff3cf;
+      font-size:clamp(19px,5vw,28px);line-height:1.1;font-weight:1000;
+    }
+    .direct span{
+      display:block;margin-top:7px;color:var(--soft);
+      font-size:13px;line-height:1.45;font-weight:900;
+    }
+    .mini-actions{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:13px}
+    .mini-actions a{
+      min-height:45px;padding:0 13px;border-radius:999px;
+      border:1px solid rgba(246,196,83,.40);
+      background:rgba(255,255,255,.07);
+      display:inline-flex;align-items:center;justify-content:center;
+      color:#fff3cf;font-size:12px;font-weight:1000;
+    }
+    footer{
+      margin-top:18px;text-align:center;color:rgba(255,250,240,.66);
+      font-size:12px;line-height:1.5;font-weight:850;
+    }
+    footer a{color:#fff3cf;font-weight:1000}
+    @media(max-width:680px){
+      .app{padding-left:10px;padding-right:10px}
+      .top{grid-template-columns:54px 1fr}
+      .logo{width:54px;height:54px}
+      .back{grid-column:1/-1;width:100%}
+      .hero{border-radius:28px}
+      .main-actions,.service-grid,.form-grid{grid-template-columns:1fr}
+      .full{grid-column:auto}
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <a class="logo" href="https://driver-client.digiylyfe.com/" aria-label="Galerie DIGIY DRIVER">L</a>
+      <div class="brand">
+        <strong>LAMINE</strong>
+        <small>DIGIY DRIVER · Galerie chauffeur</small>
+      </div>
+      <a class="back" href="https://driver-client.digiylyfe.com/">← Galerie chauffeur</a>
+    </header>
+
+    <section class="hero">
+      <span class="tag">🚗 Chauffeur vérifié · Saly</span>
+      <h1>Lamine</h1>
+      <p class="role">Chauffeur privé · Transferts AIBD · Petite Côte</p>
+      <p class="lead">
+        Courses locales, transferts vers l’aéroport AIBD, trajets vers Dakar,
+        circuits Petite Côte et mise à disposition. Le programme et le tarif
+        sont confirmés directement avec Lamine.
+      </p>
+
+      <div class="trust">
+        <span>✓ Contact direct</span>
+        <span>✓ 0 % commission DIGIY</span>
+        <span>✓ Paiement direct au chauffeur</span>
+        <span>✓ Course selon disponibilité</span>
+      </div>
+
+      <div class="main-actions">
+        <a class="btn btn-primary" href="https://wa.me/221784413680?text=Bonjour%20Lamine%2C%20je%20vous%20contacte%20depuis%20votre%20fiche%20DIGIY%20DRIVER." target="_blank" rel="noopener">💬 Contacter Lamine sur WhatsApp</a>
+        <a class="btn btn-secondary" href="tel:+221784413680">📞 Appeler directement</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Les services chauffeur</h2>
+      <p>Une seule porte métier : DIGIY DRIVER. La course se confirme directement avec le chauffeur.</p>
+
+      <div class="service-grid">
+        <article class="service">
+          <i>✈️</i>
+          <strong>Transfert AIBD</strong>
+          <span>Trajet entre l’aéroport, Saly et les zones desservies.</span>
+        </article>
+        <article class="service">
+          <i>📍</i>
+          <strong>Course locale</strong>
+          <span>Déplacements à Saly, Mbour, Somone, Ngaparou et sur la Petite Côte.</span>
+        </article>
+        <article class="service">
+          <i>🏙️</i>
+          <strong>Trajet vers Dakar</strong>
+          <span>Transport vers Dakar selon le planning et les conditions convenues.</span>
+        </article>
+        <article class="service">
+          <i>🌊</i>
+          <strong>Circuit Petite Côte</strong>
+          <span>Déplacement personnalisé selon le programme du client.</span>
+        </article>
+        <article class="service">
+          <i>🕐</i>
+          <strong>Mise à disposition</strong>
+          <span>Plusieurs déplacements sur une durée convenue avec Lamine.</span>
+        </article>
+        <article class="service">
+          <i>💬</i>
+          <strong>Course sur réservation</strong>
+          <span>Date, heure, départ, destination, passagers et bagages confirmés sur WhatsApp.</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Zones desservies</h2>
+      <p>Les trajets restent soumis à la disponibilité du chauffeur et à la confirmation du programme.</p>
+      <div class="zones">
+        <span>Saly</span>
+        <span>Mbour</span>
+        <span>Somone</span>
+        <span>Ngaparou</span>
+        <span>Petite Côte</span>
+        <span>AIBD</span>
+        <span>Dakar</span>
+      </div>
+    </section>
+
+    <section class="section booking" id="preparer-course">
+      <h2>Préparer votre message</h2>
+      <p>Ces informations ne sont pas envoyées à DIGIY. Le bouton prépare simplement un message WhatsApp direct à Lamine.</p>
+
+      <form id="tripForm">
+        <div class="form-grid">
+          <div>
+            <label for="date">Date souhaitée</label>
+            <input id="date" type="date">
+          </div>
+          <div>
+            <label for="time">Heure souhaitée</label>
+            <input id="time" type="time">
+          </div>
+          <div>
+            <label for="from">Lieu de départ</label>
+            <input id="from" type="text" placeholder="Ex. Saly">
+          </div>
+          <div>
+            <label for="to">Destination</label>
+            <input id="to" type="text" placeholder="Ex. AIBD">
+          </div>
+          <div>
+            <label for="passengers">Nombre de passagers</label>
+            <input id="passengers" type="number" min="1" max="20" placeholder="2">
+          </div>
+          <div>
+            <label for="bags">Bagages</label>
+            <input id="bags" type="text" placeholder="Ex. 2 valises">
+          </div>
+          <div class="full">
+            <label for="note">Précision utile</label>
+            <textarea id="note" placeholder="Vol, arrêt prévu, siège enfant, attente…"></textarea>
+          </div>
+        </div>
+        <button class="send" type="submit">Ouvrir WhatsApp avec mon trajet →</button>
+      </form>
+
+      <p class="notice">
+        DIGIY ne reçoit ni la demande ni le paiement. Lamine confirme directement la disponibilité,
+        le trajet et le tarif avec le client.
+      </p>
+    </section>
+
+    <section class="section direct">
+      <strong>Le chauffeur garde son client et son paiement.</strong>
+      <span>DIGIY ouvre la route : fiche officielle, contact direct, paiement direct et 0 % commission DIGIY.</span>
+      <div class="mini-actions">
+        <a href="https://digiylyfe.com/qr.html?url=https%3A%2F%2Fpartenaire-lamine.digiylyfe.com%2F" target="_blank" rel="noopener">▣ Afficher le QR</a>
+        <a href="https://wa.me/?text=Lamine%20%E2%80%94%20Chauffeur%20priv%C3%A9%20%C3%A0%20Saly%20%C2%B7%20DIGIY%20DRIVER%20https%3A%2F%2Fpartenaire-lamine.digiylyfe.com%2F" target="_blank" rel="noopener">📤 Partager la fiche</a>
+        <a href="https://digiylyfe.com/">∞ Découvrir DIGIYLYFE</a>
+      </div>
+    </section>
+
+    <footer>
+      <strong>DIGIY DRIVER · Lamine</strong><br>
+      Galerie chauffeur · Contact direct · Paiement direct · 0 % commission DIGIY<br>
+      <a href="https://driver-client.digiylyfe.com/">Retour à la galerie chauffeur</a>
+    </footer>
+  </main>
+
+  <script>
+    "use strict";
+
+    const form = document.getElementById("tripForm");
+
+    function value(id) {
+      return document.getElementById(id).value.trim();
+    }
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const lines = [
+        "Bonjour Lamine,",
+        "Je vous contacte depuis votre fiche DIGIY DRIVER.",
+        "",
+        "Je souhaite préparer une course :"
+      ];
+
+      const fields = [
+        ["Date", value("date")],
+        ["Heure", value("time")],
+        ["Départ", value("from")],
+        ["Destination", value("to")],
+        ["Passagers", value("passengers")],
+        ["Bagages", value("bags")],
+        ["Précision", value("note")]
+      ];
+
+      fields.forEach(([label, fieldValue]) => {
+        if (fieldValue) lines.push(`${label} : ${fieldValue}`);
+      });
+
+      lines.push("", "Pouvez-vous me confirmer votre disponibilité et le tarif ?");
+
+      const url = "https://wa.me/221784413680?text=" + encodeURIComponent(lines.join("\n"));
+      window.open(url, "_blank", "noopener");
+    });
+  </script>
+</body>
+</html>
