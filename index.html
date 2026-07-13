@@ -227,6 +227,56 @@
       font-size:12px;line-height:1.5;font-weight:850;
     }
     footer a{color:#fff3cf;font-weight:1000}
+
+    .business-card{
+      text-align:center;
+      border-color:rgba(246,196,83,.52);
+      background:
+        radial-gradient(520px 230px at 50% 0,rgba(246,196,83,.15),transparent 64%),
+        linear-gradient(150deg,rgba(8,52,35,.96),rgba(4,20,14,.96));
+    }
+    .business-card-frame{
+      margin-top:14px;
+      padding:8px;
+      border-radius:24px;
+      border:1px solid rgba(246,196,83,.46);
+      background:rgba(255,255,255,.07);
+      box-shadow:0 18px 44px rgba(0,0,0,.30);
+    }
+    .business-card-frame img{
+      display:block;
+      width:100%;
+      height:auto;
+      border-radius:18px;
+      background:#fff;
+    }
+    .business-card-actions{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:9px;
+      margin-top:13px;
+    }
+    .business-card-actions a{
+      min-height:46px;
+      padding:0 14px;
+      border-radius:999px;
+      border:1px solid rgba(246,196,83,.44);
+      background:rgba(255,255,255,.08);
+      color:#fff3cf;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-size:12.5px;
+      font-weight:1000;
+    }
+    .business-card-actions a.gold{
+      background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--green));
+      color:#06140f;
+      border-color:rgba(246,196,83,.80);
+    }
+
     @media(max-width:680px){
       .app{padding-left:10px;padding-right:10px}
       .top{grid-template-columns:54px 1fr}
@@ -323,6 +373,37 @@
         <span>Dakar</span>
       </div>
     </section>
+
+
+    <section class="section business-card" id="carte-visite">
+      <h2>Carte de visite officielle</h2>
+      <p>
+        Scannez le QR pour ouvrir directement la fiche de Lamine,
+        ou partagez cette carte avec un client.
+      </p>
+
+      <div class="business-card-frame">
+        <a href="/carte-visite.png?v=20260713-2245" target="_blank" rel="noopener" aria-label="Ouvrir la carte de visite de Lamine en grand">
+          <img
+            src="/carte-visite.png?v=20260713-2245"
+            alt="Carte de visite DIGIY DRIVER de Lamine avec QR vers sa fiche officielle"
+            loading="eager"
+            onerror="this.style.display='none';document.getElementById('cardFallback').hidden=false;"
+          >
+          <div id="cardFallback" hidden style="padding:22px;color:#fff3cf;font-weight:900;line-height:1.5">
+            La carte n’a pas encore été chargée par GitHub Pages.<br>
+            <a href="/carte-visite.png?v=20260713-2245" target="_blank" rel="noopener" style="text-decoration:underline">Ouvrir directement carte-visite.png</a>
+          </div>
+        </a>
+      </div>
+
+      <div class="business-card-actions">
+        <a class="gold" href="/carte-visite.png?v=20260713-2245" target="_blank" rel="noopener">🖼️ Ouvrir la carte en grand</a>
+        <a href="/carte-visite.png?v=20260713-2245" download="carte-visite-lamine.png">⬇️ Télécharger la carte</a>
+        <a href="https://wa.me/?text=Lamine%20%E2%80%94%20Chauffeur%20priv%C3%A9%20%C3%A0%20Saly%20%C2%B7%20DIGIY%20DRIVER%20https%3A%2F%2Fpartenaire-lamine.digiylyfe.com%2F" target="_blank" rel="noopener">📤 Partager sur WhatsApp</a>
+      </div>
+    </section>
+
 
     <section class="section booking" id="preparer-course">
       <h2>Préparer votre message</h2>
@@ -426,3 +507,4 @@
   </script>
 </body>
 </html>
+
