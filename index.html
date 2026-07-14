@@ -250,6 +250,37 @@
       border-radius:18px;
       background:#fff;
     }
+    .business-card-link{
+      display:block;
+      text-decoration:none;
+      color:inherit;
+    }
+    .business-card-link:hover{
+      transform:translateY(-1px);
+    }
+    .business-card-link-note{
+      margin-top:10px;
+      color:#fff3cf;
+      font-size:12.5px;
+      font-weight:900;
+      line-height:1.45;
+    }
+    .business-card-actions button{
+      min-height:46px;
+      padding:0 14px;
+      border-radius:999px;
+      border:1px solid rgba(246,196,83,.44);
+      background:rgba(255,255,255,.08);
+      color:#fff3cf;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      font-size:12.5px;
+      font-weight:1000;
+      font-family:inherit;
+      cursor:pointer;
+    }
     .business-card-actions{
       display:flex;
       flex-wrap:wrap;
@@ -378,29 +409,23 @@
     <section class="section business-card" id="carte-visite">
       <h2>Carte de visite officielle</h2>
       <p>
-        Scannez le QR pour ouvrir directement la fiche de Lamine,
-        ou partagez cette carte avec un client.
+        Cette carte est maintenant <strong>cliquable</strong> : cliquez dessus pour ouvrir directement la fiche officielle de Lamine.
+        Vous pouvez aussi la partager facilement avec un client.
       </p>
 
       <div class="business-card-frame">
-        <a href="/carte-visite.png?v=20260713-2245" target="_blank" rel="noopener" aria-label="Ouvrir la carte de visite de Lamine en grand">
-          <img
-            src="/carte-visite.png?v=20260713-2245"
-            alt="Carte de visite DIGIY DRIVER de Lamine avec QR vers sa fiche officielle"
-            loading="eager"
-            onerror="this.style.display='none';document.getElementById('cardFallback').hidden=false;"
-          >
-          <div id="cardFallback" hidden style="padding:22px;color:#fff3cf;font-weight:900;line-height:1.5">
-            La carte n’a pas encore été chargée par GitHub Pages.<br>
-            <a href="/carte-visite.png?v=20260713-2245" target="_blank" rel="noopener" style="text-decoration:underline">Ouvrir directement carte-visite.png</a>
-          </div>
+        <a class="business-card-link" href="https://partenaire-lamine.digiylyfe.com/" target="_blank" rel="noopener" aria-label="Ouvrir la fiche officielle de Lamine">
+          <img src="/carte-visite.png?v=20260713-2359" alt="Carte de visite DIGIY DRIVER de Lamine avec QR vers sa fiche officielle" loading="eager">
         </a>
+        <div class="business-card-link-note">🖱️ Cliquez la carte pour ouvrir directement la fiche officielle de Lamine.</div>
       </div>
 
       <div class="business-card-actions">
-        <a class="gold" href="/carte-visite.png?v=20260713-2245" target="_blank" rel="noopener">🖼️ Ouvrir la carte en grand</a>
-        <a href="/carte-visite.png?v=20260713-2245" download="carte-visite-lamine.png">⬇️ Télécharger la carte</a>
-        <a href="https://wa.me/?text=Lamine%20%E2%80%94%20Chauffeur%20priv%C3%A9%20%C3%A0%20Saly%20%C2%B7%20DIGIY%20DRIVER%20https%3A%2F%2Fpartenaire-lamine.digiylyfe.com%2F" target="_blank" rel="noopener">📤 Partager sur WhatsApp</a>
+        <a class="gold" href="https://partenaire-lamine.digiylyfe.com/" target="_blank" rel="noopener">🚗 Ouvrir la fiche officielle</a>
+        <a href="/carte-visite.png?v=20260713-2359" target="_blank" rel="noopener">🖼️ Ouvrir la carte en grand</a>
+        <a href="/carte-visite.png?v=20260713-2359" download="carte-visite-lamine.png">⬇️ Télécharger la carte</a>
+        <button type="button" id="shareCardBtn">📤 Partager la carte</button>
+        <a href="https://wa.me/?text=Lamine%20%E2%80%94%20Chauffeur%20priv%C3%A9%20%C3%A0%20Saly%0AFiche%20officielle%20%3A%20https%3A%2F%2Fpartenaire-lamine.digiylyfe.com%2F%0ACarte%20de%20visite%20%3A%20https%3A%2F%2Fpartenaire-lamine.digiylyfe.com%2Fcarte-visite.png" target="_blank" rel="noopener">💬 Partager sur WhatsApp</a>
       </div>
     </section>
 
@@ -469,6 +494,38 @@
   <script>
     "use strict";
 
+    const shareCardBtn = document.getElementById("shareCardBtn");
+    const ficheUrl = "https://partenaire-lamine.digiylyfe.com/";
+    const cardUrl = "https://partenaire-lamine.digiylyfe.com/carte-visite.png";
+
+    if (shareCardBtn) {
+      shareCardBtn.addEventListener("click", async function() {
+        const shareData = {
+          title: "Lamine — Chauffeur privé à Saly",
+          text: "Lamine — Chauffeur privé à Saly\nFiche officielle : " + ficheUrl + "\nCarte de visite : " + cardUrl,
+          url: ficheUrl
+        };
+
+        try {
+          if (navigator.share) {
+            await navigator.share(shareData);
+            return;
+          }
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(shareData.text);
+            alert("Le lien de la fiche et de la carte a été copié. Vous pouvez maintenant le coller où vous voulez.");
+            return;
+          }
+
+          window.open("https://wa.me/?text=" + encodeURIComponent(shareData.text), "_blank", "noopener");
+        } catch (error) {
+          if (error && error.name === "AbortError") return;
+          window.open("https://wa.me/?text=" + encodeURIComponent(shareData.text), "_blank", "noopener");
+        }
+      });
+    }
+
     const form = document.getElementById("tripForm");
 
     function value(id) {
@@ -506,5 +563,7 @@
     });
   </script>
 </body>
+</html>
+
 </html>
 
