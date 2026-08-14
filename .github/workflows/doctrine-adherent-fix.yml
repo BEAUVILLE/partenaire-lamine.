@@ -1,0 +1,43 @@
+name: Doctrine adhérent Lamine
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/doctrine-adherent-fix.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Neutraliser partenaire et officiel
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html'); s=p.read_text(encoding='utf-8')
+          repl={
+            '🤝 PARTENAIRE DIGIYLYFE':'👤 ADHÉRENT DIGIYLYFE',
+            'PARTENAIRE DIGIYLYFE':'ADHÉRENT DIGIYLYFE',
+            'Partenaire DIGIYLYFE':'Adhérent DIGIYLYFE',
+            'Partenaire: Lamine':'Adhérent : Lamine',
+            'Partenaire : Lamine':'Adhérent : Lamine',
+            'QR officiel DIGIYLYFE':'QR DIGIYLYFE',
+            'QR officiel':'QR DIGIYLYFE',
+            'Fiche officielle':'Fiche DIGIYLYFE',
+            'fiche officielle':'fiche DIGIYLYFE',
+            'le QR DIGIYLYFE DIGIYLYFE':'le QR DIGIYLYFE',
+            'partenaire Lamine':'adhérent Lamine'
+          }
+          for a,b in repl.items(): s=s.replace(a,b)
+          p.write_text(s,encoding='utf-8')
+          PY
+          echo '=== Restes sensibles ==='
+          grep -inoE 'partenaire|officiel|officielle|vérifi|certifi|garanti|ambassadeur|sélectionné' index.html | head -80 || true
+      - name: Commit
+        run: |
+          git config user.name 'DIGIYLYFE Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Lamine : adhérent DIGIYLYFE sans statut officiel' || exit 0
+          git push
