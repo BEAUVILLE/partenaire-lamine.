@@ -1,0 +1,22 @@
+name: Aperçu audit carte Lamine
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/preview-card-audit-temp.yml'
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Préparer aperçu
+        run: |
+          sudo apt-get update >/dev/null
+          sudo apt-get install -y imagemagick >/dev/null
+          convert 'carte-visite.png' -resize 540x960 -quality 82 preview-lamine.jpg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: preview-lamine-card
+          path: preview-lamine.jpg
