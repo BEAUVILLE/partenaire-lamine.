@@ -1,22 +1,34 @@
-name: Aperçu audit carte Lamine
+name: Corriger carte Lamine adhérent
 on:
   push:
     branches: [main]
     paths:
       - '.github/workflows/preview-card-audit-temp.yml'
 permissions:
-  contents: read
+  contents: write
 jobs:
-  preview:
+  fix:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Préparer aperçu
+      - name: Corriger la carte
         run: |
           sudo apt-get update >/dev/null
           sudo apt-get install -y imagemagick >/dev/null
-          convert 'carte-visite.png' -resize 540x960 -quality 82 preview-lamine.jpg
+          convert 'carte-visite.png' \
+            -fill '#082b20' -stroke '#e7bf59' -strokewidth 3 -draw 'roundrectangle 165,472 915,552 34,34' \
+            -fill '#f4c653' -stroke none -font DejaVu-Sans-Bold -pointsize 31 -gravity North -annotate +0+492 'CHAUFFEUR PRIVÉ · ADHÉRENT DIGIYLYFE' \
+            'carte-visite-new.png'
+          mv 'carte-visite-new.png' 'carte-visite.png'
+          convert 'carte-visite.png' -resize 540x960 -quality 84 preview-lamine-corrigee.jpg
       - uses: actions/upload-artifact@v4
         with:
-          name: preview-lamine-card
-          path: preview-lamine.jpg
+          name: preview-lamine-card-corrigee
+          path: preview-lamine-corrigee.jpg
+      - name: Publier la carte seulement
+        run: |
+          git config user.name 'DIGIYLYFE Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add carte-visite.png
+          git commit -m 'Carte Lamine : afficher adhérent DIGIYLYFE' || exit 0
+          git push
