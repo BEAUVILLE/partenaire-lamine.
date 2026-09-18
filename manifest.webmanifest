@@ -1,0 +1,21 @@
+{
+  "name": "Lamine · Chauffeur privé",
+  "short_name": "Lamine Chauffeur",
+  "description": "Lamine · Chauffeur privé · présence professionnelle propulsée par DIGIYLYFE",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#07150f",
+  "theme_color": "#126b43",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/carte-visite.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
