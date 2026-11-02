@@ -1,0 +1,16 @@
+name: Lamine — fiches WO et 中文
+on:
+  pull_request:
+    paths:
+      - index.html
+      - tests/test_driver_10_lang.py
+      - .github/workflows/driver-10-languages.yml
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Valider la fiche chauffeur et son parcours direct
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
