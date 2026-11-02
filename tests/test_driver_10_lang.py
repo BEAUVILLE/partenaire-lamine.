@@ -36,7 +36,8 @@ class ProfileTenLanguages(unittest.TestCase):
     def test_existing_direct_flows(self):
         self.assertIn("https://wa.me/",HTML)
         self.assertIn("tripForm",HTML)
-        self.assertIn("QRCode",HTML)
+        self.assertIn('id="qrBtn"',HTML)
+        self.assertIn("https://digiylyfe.com/qr.html?url=",HTML)
         self.assertIn("function apply(",HTML)
         self.assertIn("https://partenaire-lamine.digiylyfe.com/",HTML)
 
